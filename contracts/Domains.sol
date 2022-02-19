@@ -92,14 +92,13 @@ contract Domains is ERC721URIStorage {
         );
         console.log("Final tokenURI", finalTokenUri);
         console.log(
-            "--------------------------------------------------------\n"
-        );
+            "--------------------------------------------------------\n");
 
-        _safeMint(msg.sender, newRecordId);
-        _setTokenURI(newRecordId, finalTokenUri);
-        domains[name] = msg.sender;
+      _safeMint(msg.sender, newRecordId);
+      _setTokenURI(newRecordId, finalTokenUri);
+       domains[name] = msg.sender;
 
-        _tokenIds.increment();
+      _tokenIds.increment();
     }
 
     function getAddress(string calldata name) public view returns (address) {
